@@ -1,17 +1,76 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <title>my first github project clone update</title>
-</head>
-
+    <title>Update from worker 1</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
 <body>
-
-
-<footer>
-
-</footer>
+ <div class="container" id="myTopnav">
+     <a href="#"><img src="img/sticky-logo.png" style="width:132px;"></a>
+    <a href="#" class="active">Home</a>
+     <a href="#">About</a>
+     <a href="#">Blog</a>
+     <a href="#">contact us</a>
+     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars">toggle me</i>
+  </a>
+    </div>
+    
+    <div class="slider">
+    <div class="slides fades">
+        <div class="numbertext">1/3</div>
+        <img src="img/portfolio-8-393x300.jpg" style="width:50%;"50%>
+        <div class="text">slider 1</div>
+        </div>
+        
+        <div class="slides fades">
+        <div class="numbertext">2/3</div>
+        <img src="img/portfolio-9-393x300.jpg" style="width:50%;">
+        <div class="text">slider 2</div>
+        </div>
+        
+        
+        <div class="slides fades">
+        <div class="numbertext">3/3</div>
+        <img src="img/portfolio-7-393x300.jpg" style="width:50%;">
+        <div class="text">slider 3</div>
+        </div>
+        
+        <a class="prev" onclick="plus-slider(-1)">&#10094</a>
+        <a class="next" onclick="plus-slider(1)">&#10095</a>
+    </div>
+    
+   <script>
+    //var or let
+       var slideindex = 0;
+       showslides();
+       
+       function showslides(){
+           var i;
+           var slides = document.getElementsByClassName("slides");
+           for(i=0;i < slides.length;i++){
+               slides[i].style.display = "none";
+           }
+           slideindex++;
+           if(slideindex > slides.length){
+            slideindex = 1;
+           }
+            slides[slideindex - 1].style.display = "block";
+            setTimeout(showslides,5000);
+       }
+       
+       
+       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "container") {
+    x.className += " responsive";
+  } else {
+    x.className = "container";
+  }
+}
+    </script> 
 </body>
+
 
 </html>
